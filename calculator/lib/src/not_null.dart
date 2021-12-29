@@ -1,0 +1,3 @@
+class NotNull {
+  const NotNull();
+}
