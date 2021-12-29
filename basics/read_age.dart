@@ -3,11 +3,11 @@ import 'dart:io';
 void main(List<String> args) {
   stdout.writeln("Add your age: ");
 
-  final String? ageString = stdin.readLineSync();
+  final String ageString = stdin.readLineSync();
   int age;
 
   try {
-    age = int.parse(ageString!);
+    age = int.parse(ageString);
   } on FormatException {
     age = 0;
   }
