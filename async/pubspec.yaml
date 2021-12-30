@@ -1,0 +1,7 @@
+name: async
+version: 1.0.0
+description: async programming in dart
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+dependencies:
+  faker: ^2.0.0
