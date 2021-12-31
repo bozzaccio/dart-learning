@@ -1,5 +1,7 @@
 import 'dart:io';
 
+typedef PersonList = List<Person>;
+
 class Person {
   String id;
   String name;
@@ -19,35 +21,35 @@ class HttpResponse<T> {
 
   HttpResponse(this.payload, this.message, this.status);
 
-  HttpResponse._builder(HttpResponseBulder<T> builder)
+  HttpResponse._builder(HttpResponseBuilder<T> builder)
       : payload = builder.p,
         message = builder.m,
         status = builder.s;
 }
 
-class HttpResponseBulder<T> {
+class HttpResponseBuilder<T> {
   T? p;
   late String m;
   late int s;
 
-  HttpResponseBulder(this.p);
+  HttpResponseBuilder(this.p);
 
-  HttpResponseBulder message(String message) {
+  HttpResponseBuilder message(String message) {
     m = message;
     return this;
   }
 
-  HttpResponseBulder status(int status) {
+  HttpResponseBuilder status(int status) {
     s = status;
     return this;
   }
 
-  HttpResponseBulder statusOk() {
+  HttpResponseBuilder statusOk() {
     s = HttpStatus.ok;
     return this;
   }
 
-  HttpResponseBulder badRequest() {
+  HttpResponseBuilder badRequest() {
     s = HttpStatus.badRequest;
     return this;
   }

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 lcov=$(which lcov)
 
 if [ -z "$lcov" ]

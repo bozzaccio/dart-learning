@@ -15,7 +15,7 @@ mixin MockCreator {
   List<model.Person> generatePersonList() {
     List<model.Person> personList = List.empty(growable: true);
 
-    for (int i = 0; i < faker.randomGenerator.integer(15); i++) {
+    for (int i = 0; i < faker.randomGenerator.integer(15, min: 1); i++) {
       personList.add(generatePerson());
     }
 

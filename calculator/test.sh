@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Running full tests suite...."
 set -e
 echo "Basic Calculator Tests"

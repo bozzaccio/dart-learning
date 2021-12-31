@@ -1,5 +1,5 @@
-import 'package:async/src/model.dart';
-import 'package:async/src/person_rest_service.dart';
+import 'package:async_learn/src/model.dart';
+import 'package:async_learn/src/person_rest_service.dart';
 
 class Client {
   final PersonRestService personRestService = new PersonRestService();
@@ -7,7 +7,7 @@ class Client {
   Future<HttpResponse<Person>> get(String id) async {
     Person person = await personRestService.get(id);
 
-    HttpResponse<Person> httpResponse = HttpResponseBulder<Person>(person)
+    HttpResponse<Person> httpResponse = HttpResponseBuilder<Person>(person)
         .message("Person retrieved")
         .statusOk()
         .build() as HttpResponse<Person>;
@@ -18,7 +18,7 @@ class Client {
   Future<HttpResponse<Person>> post(Person request) async {
     Person person = await personRestService.create(request);
 
-    HttpResponse<Person> httpResponse = HttpResponseBulder<Person>(person)
+    HttpResponse<Person> httpResponse = HttpResponseBuilder<Person>(person)
         .message("Person created")
         .statusOk()
         .build() as HttpResponse<Person>;
@@ -29,7 +29,7 @@ class Client {
   Future<HttpResponse<Person>> put(Person request) async {
     Person person = await personRestService.update(request);
 
-    HttpResponse<Person> httpResponse = HttpResponseBulder<Person>(person)
+    HttpResponse<Person> httpResponse = HttpResponseBuilder<Person>(person)
         .message("Person update")
         .statusOk()
         .build() as HttpResponse<Person>;
@@ -41,7 +41,7 @@ class Client {
     String result = await personRestService.delete(id);
 
     HttpResponse httpResponse =
-        HttpResponseBulder(null).message(result).statusOk().build();
+        HttpResponseBuilder(null).message(result).statusOk().build();
 
     return Future.value(httpResponse);
   }
@@ -50,7 +50,7 @@ class Client {
     List<Person> personList = await personRestService.getAll();
 
     HttpResponse<List<Person>> httpResponse =
-        HttpResponseBulder<List<Person>>(personList)
+        HttpResponseBuilder<List<Person>>(personList)
             .message("All person retrieved")
             .statusOk()
             .build() as HttpResponse<List<Person>>;
